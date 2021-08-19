@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Fill out the form below</h3> <br>
+
+  <%= form_for @contact do |f| %>
+    <div class="text-field">
+    <%= f.text_field :name, placeholder: "Contact name", required: true, autofocus: true, class:"form-control" %>
+    </div> <br>
+    <div class="text-field">
+    <%= f.text_field :number, placeholder: "Contact number", required: true, class:"form-control" %>
+    </div> <br>
+    <div class="text-field">
+    <%= f.text_field :email, placeholder: "Contact email", required: true, class:"form-control" %>
+    </div> <br>
+
+    <div class="actions">
+    <%= f.submit "Save contact", class:"btn btn-primary" %>
+    <%= link_to "Cancel", contacts_path, class:"btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>

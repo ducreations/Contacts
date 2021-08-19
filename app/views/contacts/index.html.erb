@@ -1,1 +1,27 @@
-<h1>Contacts list</h1>
+<h1>Contacts list</h1> <br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.number %></td>
+        <td><%= contact.email %></td>
+        <td><%= link_to "Delete", contact_path(contact),
+          method: :delete,
+          data: {confirm: "This contact will move to trash"},
+          class:"btn btn-sm btn-outline-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add contact", new_contact_path, class:"btn btn-primary" %>

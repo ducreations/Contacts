@@ -13,6 +13,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to "Log out", destroy_user_session_path, class:"btn btn-sm btn-outline-dark" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
